@@ -8,13 +8,11 @@ textfiel:Element
 deleateButton:Element
 createButton:Element
 editButton:Element
-inputfield:Element
+inputfield:HTMLInputElement
 
 }
 
 let divs: Div[] = [new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div,new Div]; 
- //divs: Array<Div>();
-
 
 function AddTextTS(selectText:string){
    //ivi Div= new Div();
@@ -39,12 +37,12 @@ divi.createButton = document.createElement("button");
 
     //  var buttonWork = document.createElement("button");
     divi.createButton.textContent='Edit';
-    divi.createButton.setAttribute('onclick', 'EditDivTS('+counter+'))')
+    divi.createButton.setAttribute('onclick', 'EditDivTS('+counter+')')
       
    //   var buttonDelete = document.createElement("button");
    divi.deleateButton.textContent='Delete';
    divi.deleateButton.id= "DeleteButtondiv"+counter;;
-   divi.deleateButton.setAttribute('onclick', 'DeleteDivTS('+counter+'))')
+   divi.deleateButton.setAttribute('onclick', 'DeleteDivTS('+counter+')')
 
       counter++;
 console.log(divs[counter]);
@@ -61,7 +59,7 @@ console.log(divs[counter]);
 function EditDivTS(ID:number){
     console.log('EditDiv '+ID);
     
-divs[ID].inputfield= document.createElement("INPUT");
+divs[ID].inputfield= (<HTMLInputElement> document.createElement("INPUT"));
 divs[ID].inputfield.id= 'inputfield'+ ID;
 divs[ID].inputfield.setAttribute("type", "text");
 divs[ID].div.appendChild(divs[ID].inputfield);
@@ -72,14 +70,10 @@ function EditTextTS(ID:number){
     
     console.log('EditText '+ID);
     
-    
-
-    
     divs[ID].deleateButton.textContent= 'Delete';
     divs[ID].deleateButton.setAttribute('onclick', 'DeleteDivTS('+ID+')')
-    
    
-    divs[ID].textfiel.textContent=divs[ID].inputfield.nodeValue;
+    divs[ID].textfiel.textContent=divs[ID].inputfield.value;
 
     divs[ID].div.removeChild(divs[ID].inputfield);
 }

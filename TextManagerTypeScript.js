@@ -7,7 +7,6 @@ var Div = /** @class */ (function () {
     return Div;
 }());
 var divs = [new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div];
-//divs: Array<Div>();
 function AddTextTS(selectText) {
     //ivi Div= new Div();
     var divi = divs[counter];
@@ -54,10 +53,10 @@ function EditTextTS(ID) {
     console.log('EditText ' + ID);
     divs[ID].deleateButton.textContent = 'Delete';
     divs[ID].deleateButton.setAttribute('onclick', 'DeleteDivTS(' + ID + ')');
-    divs[ID].textfiel.textContent = divs[ID].inputfield.nodeValue;
+    divs[ID].textfiel.textContent = divs[ID].inputfield.value;
     divs[ID].div.removeChild(divs[ID].inputfield);
 }
-function DeleteDivTS(ID) {
+function DeleteDivTS(ID) {//
     console.log('deleteDiv ' + ID);
     var parentDiv = document.getElementById("ParentDiv");
     parentDiv.removeChild(divs[ID].div);
