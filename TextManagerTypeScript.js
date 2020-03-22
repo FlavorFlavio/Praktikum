@@ -8,25 +8,23 @@ var Div = /** @class */ (function () {
 }());
 var divs = [new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div, new Div];
 function AddTextTS(selectText) {
-    //ivi Div= new Div();
     var divi = divs[counter];
     divi.ID = counter;
     divi.div = document.createElement("div");
+    divi.div.setAttribute("class", "newdiv");
     divi.textfiel = document.createElement("p");
     divi.deleateButton = document.createElement("button");
+    divi.deleateButton.setAttribute("class", "deletebutton");
     divi.createButton = document.createElement("button");
+    divi.createButton.setAttribute("class", "editbutton");
     console.log(counter + ' addText ' + selectText);
     var parentDiv = document.getElementById("ParentDiv");
-    // var div = document.createElement("div");
     divi.div.id = "div" + counter;
-    //  var textBox = document.createElement("p");
     divi.textfiel.id = "textdiv" + counter;
     var text = document.createTextNode(selectText);
     var umbruch = document.createElement("br");
-    //  var buttonWork = document.createElement("button");
     divi.createButton.textContent = 'Edit';
     divi.createButton.setAttribute('onclick', 'EditDivTS(' + counter + ')');
-    //   var buttonDelete = document.createElement("button");
     divi.deleateButton.textContent = 'Delete';
     divi.deleateButton.id = "DeleteButtondiv" + counter;
     ;
@@ -42,21 +40,48 @@ function AddTextTS(selectText) {
 }
 function EditDivTS(ID) {
     console.log('EditDiv ' + ID);
-    divs[ID].inputfield = document.createElement("INPUT");
-    divs[ID].inputfield.id = 'inputfield' + ID;
-    divs[ID].inputfield.setAttribute("type", "text");
-    divs[ID].div.appendChild(divs[ID].inputfield);
-    divs[ID].deleateButton.setAttribute('onclick', 'EditTextTS("' + ID + '")');
-    divs[ID].deleateButton.textContent = 'Save new text';
+    if (!divs[ID].isEditEnabled) {
+        divs[ID].inputfield = document.createElement("INPUT");
+        divs[ID].inputfield.setAttribute("class", "editinputfield");
+        divs[ID].inputfield.id = 'inputfield' + ID;
+        divs[ID].inputfield.setAttribute("type", "text");
+        divs[ID].InputfielLable = document.createElement("LABEL");
+        divs[ID].InputfielLable.setAttribute("for", "inputfield" + ID);
+        divs[ID].InputfielLable.textContent = "New Text: ";
+        CreateDropdown(ID);
+        divs[ID].div.appendChild(divs[ID].InputfielLable);
+        divs[ID].InputfielLable.appendChild(divs[ID].inputfield);
+        //divs[ID].div.appendChild(divs[ID].inputfield);
+        divs[ID].deleateButton.setAttribute('onclick', 'EditTextTS("' + ID + '")');
+        divs[ID].deleateButton.setAttribute("class", "savebutton");
+        divs[ID].deleateButton.textContent = 'Save';
+        divs[ID].isEditEnabled = true;
+    }
+}
+function CreateDropdown(ID) {
+    var color = ["Red", "Green", "Blue", "Yellow"];
+    divs[ID].Color = document.createElement("SELECT");
+    divs[ID].Color.id = "Color" + ID;
+    divs[ID].Color.setAttribute("for", "inputfield" + ID);
+    divs[ID].InputfielLable.appendChild(divs[ID].Color);
+    for (var i = 0; i < color.length; i++) {
+        var option = document.createElement("option");
+        option.value = color[i];
+        option.text = color[i];
+        divs[ID].Color.appendChild(option);
+    }
 }
 function EditTextTS(ID) {
     console.log('EditText ' + ID);
     divs[ID].deleateButton.textContent = 'Delete';
+    divs[ID].deleateButton.setAttribute("class", "deletebutton");
     divs[ID].deleateButton.setAttribute('onclick', 'DeleteDivTS(' + ID + ')');
     divs[ID].textfiel.textContent = divs[ID].inputfield.value;
-    divs[ID].div.removeChild(divs[ID].inputfield);
+    divs[ID].textfiel.style.color = divs[ID].Color.value;
+    divs[ID].div.removeChild(divs[ID].InputfielLable);
+    divs[ID].isEditEnabled = false;
 }
-function DeleteDivTS(ID) {//
+function DeleteDivTS(ID) {
     console.log('deleteDiv ' + ID);
     var parentDiv = document.getElementById("ParentDiv");
     parentDiv.removeChild(divs[ID].div);

@@ -1,12 +1,14 @@
-p{
-    color: blue;
-    font-size: 20px;
-}
-button{
+html{text-align: center;}
 
-    background-color:grey;
-    width: 100px;
-    height: 30px;
+p  {color: red;font-size: 20px;}
 
-}
-    
+button{background-color:grey;width: 100px;height: 30px;margin-top: 10px;margin-left: 10px;padding: 10px 10px 10px 10px;box-shadow: 0px  3px 3px rgba(0,0 ,0 ,0.5);border: solid 1px black;}
+button:hover {box-shadow: 0px  3px 3px rgba(0,0 ,0 ,0.5);background-color:rgb(119, 117, 113);}
+.deletebutton {background-color:red;border: solid 1px black;}
+.deletebutton:hover {background-color:rgba(255,0 ,0 ,0.5);border: solid 1px black;}
+.editbutton { background-color:yellow;  border: solid 1px black;}
+.editbutton:hover {background-color:rgba(255,255 ,0 ,0.5);border: solid 1px black;}
+.savebutton {background-color:green;border: solid 1px black;}
+.savebutton:hover {background-color:rgba(0,128 ,0 ,0.5);border: solid 1px black;}
+
+div {background-color: blue;border-style: solid;border-radius: 10px;border-color: black;}

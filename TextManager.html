@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <link href="TextManager.css" type="text/css" rel="stylesheet">
+    <link href="Style.css" type="text/css" rel="stylesheet">
     <body>
     
-        <label for="eingabeTitel">Text:
-            <input type="text" id="Eingabe" name="eingabe" >
+     
+     
+    <h1><b></b>Textmanager</b> </h1>
+        <label class="eingabelabel" for="Eingabe"><b>New text:</b> 
+            <input class="eingabeinputfield" type="text" id="Eingabe" name="eingabe" >
           </label>
-        
-        <button type="button"  onclick="AddTextTS(document.getElementById('Eingabe').value)"></button>
+          <button class="eingabebutton" type="button"  onclick="AddTextTS(document.getElementById('Eingabe').value)">Build textbox</button>
+  
     <div id="ParentDiv">
         
       </div>
-      
+     
       <script src="TextManagerTypeScript.js"> </script>
 
 

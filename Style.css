@@ -1,0 +1,54 @@
+html{text-align: center;font-style: italic;}
+h1{
+
+}
+p  {color: rgb(255, 255, 255);font-size: 20px;}
+
+.eingabelabel{
+    color: black;font-size: 20px;
+    font-style: italic;
+}
+.eingabebutton{
+    background-color:grey;width: 100px;height: 20px;;box-shadow: 0px  3px 3px rgba(0,0 ,0 ,0.5);border: solid 1px black;
+    font-style: italic;
+    border-radius: 5px;
+    color: white;
+}
+
+.eingabebutton:hover {box-shadow: 0px  3px 3px rgba(0,0 ,0 ,0.4);background-color:rgb(119, 117, 113);
+    font-style: italic;
+    color: white;;border-radius: 5px;}
+.deletebutton {background-color:red;border: solid 1px black;    font-style: italic;
+    color: white;border-radius: 5px;}
+.deletebutton:hover {background-color:rgba(255,0 ,0 ,0.4);border: solid 1px black;    font-style: italic;
+    color: white;border-radius: 5px;}
+.editbutton { background-color:blue;  border: solid 1px black;
+    font-style: italic;border-radius: 5px;
+    color: white;}
+.editbutton:hover {background-color:rgba(0,0 ,255 ,0.4);border: solid 1px black;
+    font-style: italic;border-radius: 5px;
+    color: white;}
+.savebutton {background-color:green;border: solid 1px black;
+    font-style: italic;border-radius: 5px;
+    color: white;}
+.savebutton:hover {background-color:rgba(0,128 ,0 ,0.4);border: solid 1px black;
+    font-style: italic;border-radius: 5px;
+    color: white;}
+
+.newdiv {background-color:grey;border-style: ridge;border-radius: 5px;border-color: black;
+    font-style: italic;
+    color: white;border-radius: 5px;
+margin-top: 10px;}
+
+.eingabeinputfield {background-color:grey;border-style: ridge;border-radius: 5px;border-color: black;
+    font-style: italic;
+    color: white;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.editinputfield {background-color:white;border-style: ridge;border-radius: 5px;border-color: black;
+    font-style: italic;
+    color: black;
+
+margin-bottom: 10px;
+}
