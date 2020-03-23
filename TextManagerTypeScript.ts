@@ -7,6 +7,7 @@ isEditEnabled:boolean;
 div:Element;
 textfiel:HTMLInputElement;
 Color:HTMLInputElement;
+FontSize:HTMLInputElement;
 deleateButton:Element
 createButton:Element
 editButton:Element
@@ -66,16 +67,27 @@ divs[ID].inputfield.setAttribute("class", "editinputfield");
 divs[ID].inputfield.id= 'inputfield'+ ID;
 divs[ID].inputfield.setAttribute("type", "text");
 
+divs[ID].FontSize=  (<HTMLInputElement>document.createElement("range"));
+divs[ID].FontSize.id= 'slider'+ ID;
+//divs[ID].FontSize.textContent="Fontsize:";
+
+divs[ID].inputfield= (<HTMLInputElement> document.createElement("INPUT"));
+divs[ID].inputfield.setAttribute("class", "editinputfield");
+divs[ID].inputfield.id= 'inputfield'+ ID;
+divs[ID].inputfield.setAttribute("for","slider"+ID);
+divs[ID].inputfield.setAttribute("type", "text");
+
 
 divs[ID].InputfielLable=  (<HTMLInputElement>document.createElement("LABEL"));
 divs[ID].InputfielLable.setAttribute("for","inputfield"+ID);
-divs[ID].InputfielLable.textContent="New Text: ";
+divs[ID].InputfielLable.textContent="New text: ";
 
 CreateDropdown(ID);
 
         
         divs[ID].div.appendChild(divs[ID].InputfielLable);
         
+        divs[ID].InputfielLable.appendChild(divs[ID].FontSize);
         divs[ID].InputfielLable.appendChild(divs[ID].inputfield);
 
 //divs[ID].div.appendChild(divs[ID].inputfield);
