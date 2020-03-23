@@ -8,6 +8,7 @@ function AddText(string){
     var div = document.createElement("div");
     div.id= "div"+counter;
     
+    div.setAttribute("class", "newdiv");
       var textBox = document.createElement("p");
       textBox.id="textdiv"+counter;
       var text = document.createTextNode(string);
