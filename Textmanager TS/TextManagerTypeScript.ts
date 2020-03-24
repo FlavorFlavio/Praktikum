@@ -67,8 +67,8 @@ divs[ID].inputfield.setAttribute("class", "editinputfield");
 divs[ID].inputfield.id= 'inputfield'+ ID;
 divs[ID].inputfield.setAttribute("type", "text");
 
-divs[ID].FontSize=  (<HTMLInputElement>document.createElement("range"));
-divs[ID].FontSize.id= 'slider'+ ID;
+divs[ID].FontSize=  (<HTMLInputElement>document.createElement("INPUT"));
+divs[ID].FontSize.id= 'fontinputfield'+ ID;
 //divs[ID].FontSize.textContent="Fontsize:";
 
 divs[ID].inputfield= (<HTMLInputElement> document.createElement("INPUT"));
@@ -122,6 +122,8 @@ function EditTextTS(ID:number){
     divs[ID].deleateButton.setAttribute('onclick', 'DeleteDivTS('+ID+')')
     divs[ID].textfiel.textContent=divs[ID].inputfield.value;
     divs[ID].textfiel.style.color=  divs[ID].Color.value;
+    divs[ID].textfiel.style.fontSize= divs[ID].FontSize.value;
+    
 
     divs[ID].div.removeChild(divs[ID].InputfielLable);
     divs[ID].isEditEnabled=false;
