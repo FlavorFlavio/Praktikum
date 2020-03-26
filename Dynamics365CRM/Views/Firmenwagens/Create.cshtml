@@ -1,0 +1,56 @@
+﻿@model Dynamics365CRM.Models.Firmenwagen
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout2";
+}
+
+<h1>Erstell Firmenwagen</h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fahrzeughalter" class="control-label"></label>
+                <input asp-for="Fahrzeughalter" class="form-control" />
+                <span asp-validation-for="Fahrzeughalter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zulassungsende" class="control-label"></label>
+                <input asp-for="Zulassungsende" class="form-control" />
+                <span asp-validation-for="Zulassungsende" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kennzeichen" class="control-label"></label>
+                <input asp-for="Kennzeichen" class="form-control" />
+                <span asp-validation-for="Kennzeichen" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Fahrzeugmarke" class="control-label"></label>
+                <input asp-for="Fahrzeugmarke" class="form-control" />
+                <span asp-validation-for="Fahrzeugmarke" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Fahrzeugname" class="control-label"></label>
+                <input asp-for="Fahrzeugname" class="form-control" />
+                <span asp-validation-for="Fahrzeugname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Erstellen" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="NamensListe">Zurück</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

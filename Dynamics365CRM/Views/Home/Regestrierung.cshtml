@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Bla"] = "Home Page";
+    Layout = "_Layout";
+}
+
+
+
+    <div class="text-center">
+        <h1 class="display-4"></h1>
+        <h1>Registrierung</h1>
+        <form method="post" asp-controller="Home" asp-action="Anmeldung">
+            <label for="fname">Benutzername:</label>
+            <input type="text" id="benutzername" name="username"><br><br>
+            <label for="lname">Passwort:</label>
+            <input type="text" id="passwort" name="password"><br><br>
+
+            <input id="anmeldungsbutton" type="submit" value="regestrierung">
+
+        </form>
+        <p> <a></a>.</p>
+    </div>

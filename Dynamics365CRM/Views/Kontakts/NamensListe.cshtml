@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Kontakt>
+
+@{
+    ViewData["Title"] = "NamensListe";
+    Layout = "_Layout2";
+}
+
+<h1>Kontakte</h1>
+
+<p>
+    <a asp-action="Create">Erstell Kontakt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vorname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nachname)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-area="" asp-controller="Kontakts" asp-action="Kontaktdaten" 
+                    asp-route-vorname="@item.Vorname" 
+                   asp-route-nachname="@item.Nachname" 
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Vorname)</a>
+
+             
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Kontakts" asp-action="Kontaktdaten"
+                   asp-route-vorname="@item.Vorname"
+                   asp-route-nachname="@item.Nachname"
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Nachname)</a>
+
+               
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

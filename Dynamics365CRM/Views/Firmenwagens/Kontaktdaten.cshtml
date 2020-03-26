@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Firmenwagen>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout2";
+}
+
+<h1>Fahrzeugdaten</h1>
+<p>
+</p>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fahrzeugname)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fahrzeugname)
+                </td>
+            </tr>
+            <tr>
+                <th>
+
+                    @Html.DisplayNameFor(model => model.Fahrzeughalter)
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Kontakts" asp-action="Kontaktdaten"
+                       asp-route-name="@item.Fahrzeughalter"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Fahrzeughalter)</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fahrzeugmarke)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fahrzeugmarke)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kennzeichen)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kennzeichen)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Zulassungsende)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zulassungsende)
+                </td>
+            </tr>
+
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Start"] = "Start";
+    Layout = "_Layout";
+}
+
+    <div class="text-center">
+        <h1 class="display-4"></h1>
+        <h1>Login</h1>
+        <form method="post" asp-controller="Home" asp-action="Angemeldet">
+            <label for="fname">Benutername:</label>
+            <input type="text" id="benutzername" name="username"><br><br>
+            <label for="lname">Passwort:   </label>
+            <input type="text" id="passwort" name="password"><br><br>
+
+            <input id="anmeldungsbutton" type="submit" value="Anmelden">
+
+        </form>
+
+        <a asp-area="" asp-controller="Home" asp-action="Regestrierung" asp-route-name="" style="color: #0026ff">
+            <input id="regestrierungsbutton" type="button" value="Regestrieren">
+
+        </a>
+
+
+
+        <p> <a></a>.</p>
+    </div>
