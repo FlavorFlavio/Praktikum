@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Verkaufschance>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout2";
+}
+
+    <h1>Verkaufschance</h1>
+<p>
+</p>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kontakt)
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Kontakts" asp-action="Kontaktdaten"
+                       asp-route-name="@item.Kontakt"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Kontakt)</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kunde)
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Firmas" asp-action="Kontaktdaten"
+                       asp-route-Firmenname="@item.Kunde"
+                       style="color: #0026ff">  @Html.DisplayFor(modelItem => item.Kunde)</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+
+                    Auftragsvolumen Brutto
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuftragsvolumenNetto)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Umsatzsteuer)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Umsatzsteuer)
+                </td>
+            </tr>
+            <tr>
+                <th>
+
+                    Auftragsvolumen Netto
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuftragsvolumenBrutto)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Typ)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Typ)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Betreff)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Betreff)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Beschreibung)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beschreibung)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Deadline)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deadline)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Aufträge
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Auftrags" asp-action="NamensListe"
+                       asp-route-Verkaufschance="@item.Betreff"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.AuftragCount)</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Angebote
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Angebots" asp-action="NamensListe"
+                       asp-route-Verkaufschance="@item.Betreff"
+                       style="color: #0026ff">  @Html.DisplayFor(modelItem => item.AngeboteCount)</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notiz)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notiz)
+                </td>
+            </tr>
+
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+﻿@model Dynamics365CRM.Models.Angebot
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_Layout2";
+}
+
+<h1></h1>
+
+<h3>Löschen?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kunde)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kunde)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ansprechpartner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ansprechpartner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Verkaufschance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Verkaufschance)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.isFree)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isFree)
+        </dd>
+      
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Löschen" class="btn btn-danger" /> |
+        <a asp-action="NamensListe">Zurück</a>
+    </form>
+</div>

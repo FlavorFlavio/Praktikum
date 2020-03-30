@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Auftrag>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout2";
+}
+
+<h1>Aufträge</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Kunde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ansprechpartner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Verkaufschance)
+        </tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <a asp-area="" asp-controller="Firmas" asp-action="Kontaktdaten"
+                   asp-route-Firmenname="@item.Kunde"
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Kunde)</a>
+
+
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Kontakts" asp-action="Kontaktdaten"
+                   asp-route-name="@item.Ansprechpartner"
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Ansprechpartner)</a>
+
+
+
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Verkaufschances" asp-action="Kontaktdaten"
+                   asp-route-Betreff="@item.Verkaufschance"
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Verkaufschance)</a>
+
+
+
+            </td>
+            <td>
+
+                <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
+
+
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

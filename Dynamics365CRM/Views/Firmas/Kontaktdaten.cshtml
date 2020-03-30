@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Firma>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout2";
+}
+
+    <h1>Firmadaten</h1>
+
+<p>
+</p>
+<table class="table">
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adresse)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresse)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Verkaufschancen)
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Verkaufschances" asp-action="NamensListe"
+                       asp-route-Firmenname="@item.Name"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Verkaufschancen)</a>
+                  
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Aufträge
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Auftrags" asp-action="NamensListe"
+                       asp-route-Firmenname="@item.Name"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Auftrag)</a>
+                  
+                </td>
+            </tr>
+            <tr>
+                <th>
+
+                    @Html.DisplayNameFor(model => model.Angebote)
+                </th>
+                <td>
+                    <a asp-area="" asp-controller="Angebots" asp-action="NamensListe"
+                       asp-route-Firmenname="@item.Name"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Angebote)</a>
+                   
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefonnummer)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefonnummer)
+                </td>
+            </tr>
+
+
+        }
+    </tbody>
+</table>

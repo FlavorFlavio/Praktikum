@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,6 +29,19 @@ namespace Dynamics365CRM
             services.AddControllersWithViews();
             services.AddDbContext<MvcDynamicsContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("MvcContext")));
+
+            services.AddDbContext<VerkaufschancenContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("VerkaufschancenContext")));
+
+            services.AddDbContext<FirmenContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("FirmenContext")));
+
+           
+            services.AddDbContext<AngebotContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AngebotContext")));
+
+            services.AddDbContext<AuftragsContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AuftragsContext")));
 
             //services.AddDbContext<KontaktContext>(options =>
             //        options.UseSqlServer(Configuration.GetConnectionString("MvcContext")));

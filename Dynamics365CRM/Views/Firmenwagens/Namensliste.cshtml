@@ -8,7 +8,7 @@
 <h1>Fahrzeuge</h1>
 
 <p>
-    <a asp-action="Create">Erstell Fahrzeug</a>
+    <a asp-action="Create">Neues Fahrzeug</a>
 </p>
 <table class="table">
     <thead>
@@ -38,6 +38,13 @@
                 <a asp-area="" asp-controller="Kontakts" asp-action="Kontaktdaten"
                    asp-route-name="@item.Fahrzeughalter"
                    style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Fahrzeughalter)</a>
+
+
+
+            </td>
+            <td>
+
+                <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
 
 
 

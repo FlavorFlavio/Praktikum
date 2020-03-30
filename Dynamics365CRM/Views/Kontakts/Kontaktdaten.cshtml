@@ -47,6 +47,17 @@
                     @Html.DisplayFor(modelItem => item.Telefonnummer)
                 </td>
             </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Firma)
+                </th>
+                <td>
+                    
+                    <a asp-area="" asp-controller="Firmas" asp-action="Kontaktdaten"
+                       asp-route-Firmenname="@item.Firma"
+                       style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Firma)</a>
+                </td>
+            </tr>
 
 
         }

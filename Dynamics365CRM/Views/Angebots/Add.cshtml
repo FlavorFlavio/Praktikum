@@ -1,0 +1,51 @@
+﻿@model Dynamics365CRM.Models.Angebot
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout2";
+}
+
+<h1>Erstell Angebot</h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Kunde" class="control-label"></label>
+                <input asp-for="Kunde" class="form-control" />
+                <span asp-validation-for="Kunde" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ansprechpartner" class="control-label"></label>
+                <input asp-for="Ansprechpartner" class="form-control" />
+                <span asp-validation-for="Ansprechpartner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Verkaufschance" class="control-label"></label>
+                <input asp-for="Verkaufschance" class="form-control" />
+                <span asp-validation-for="Verkaufschance" class="text-danger"></span>
+            </div>
+       
+           
+            <div class="form-group">
+                <label asp-for="isFree" class="control-label"></label>
+                <input asp-for="isFree" class="form-control" />
+                <span asp-validation-for="isFree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Erstellen" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="NamensListe">Zurück</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

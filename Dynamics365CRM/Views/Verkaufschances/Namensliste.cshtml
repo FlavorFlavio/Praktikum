@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Verkaufschance>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout2";
+}
+
+    <h1>Verkaufschancen</h1>
+
+<p>
+    <a asp-action="Create">Neue Verkaufschance</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Betreff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kunde)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <a asp-area="" asp-controller="Verkaufschances" asp-action="Kontaktdaten"
+                   asp-route-Betreff="@item.Betreff"
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Betreff)</a>
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Firmas" asp-action="Kontaktdaten"
+                   asp-route-Firmenname="@item.Kunde"
+                   style="color: #0026ff"> @Html.DisplayFor(modelItem => item.Kunde)</a>
+
+
+            </td>
+            <td>
+                <a asp-controller="Angebots" asp-action="Add" asp-route-id="@item.Id">Zu Angebote</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
+
+
+
+            </td>
+
+
+
+        </tr>
+        }
+    </tbody>
+</table>

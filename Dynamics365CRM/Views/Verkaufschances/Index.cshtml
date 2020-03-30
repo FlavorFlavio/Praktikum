@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Dynamics365CRM.Models.Verkaufschance>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kontakt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuftragsvolumenNetto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Umsatzsteuer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Typ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Betreff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beschreibung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deadline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isFree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notiz)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kontakt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuftragsvolumenNetto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Umsatzsteuer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Typ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Betreff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beschreibung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isFree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notiz)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
