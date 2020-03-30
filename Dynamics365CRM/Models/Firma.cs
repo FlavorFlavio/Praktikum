@@ -6,15 +6,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dynamics365CRM.Models
 {
-    public class Kontakt
+    public class Firma
     {
         public int Id { get; set; }
-        public string Vorname { get; set; }
-        public string Nachname { get; set; }
-
-        [DataType(DataType.Date)]
-        public DateTime Geburtsdatum { get; set; }
+        public string Name { get; set; }
+        public int Verkaufschancen { get; set; }
+        public int Auftrag { get; set; }
+        public int Angebote { get; set; }
+        public string Adresse { get; set; }//  TERmIN / AUFGABE
         public int Telefonnummer { get; set; }
-        public string Firma { get; set; }
+
+      
     }
 }
